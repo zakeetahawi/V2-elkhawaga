@@ -1241,8 +1241,9 @@ window.toggleLanguage = toggleLanguage;
 // ==================== INIT ====================
 // ==================== INIT ====================
 async function init() {
-  // Load Public Settings
+  // Load Public Settings (need SettingsAPI for this)
   try {
+    const { SettingsAPI } = await loadSettingsModule();
     const publicResult = await SettingsAPI.getPublic();
     if (publicResult.success) {
       AppState.publicSettings = publicResult.data;
