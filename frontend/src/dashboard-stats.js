@@ -72,19 +72,19 @@ export function getTrendIndicator(value) {
   return { icon: '→', color: 'text-gray-600', bg: 'bg-gray-50' }
 }
 
-// Create KPI card HTML
+// Create KPI card HTML - Elkhawaga Theme
 export function createKPICard(config) {
   const { title, value, subtitle, icon, trend, loading } = config
   
   if (loading) {
     return `
-      <div class="bg-white rounded-lg shadow-md p-6 animate-pulse">
+      <div style="background: linear-gradient(135deg, #E8DED2 0%, #F9F7F5 100%); border-radius: 12px; box-shadow: 0 2px 8px rgba(74, 59, 50, 0.08);" class="p-6 animate-pulse">
         <div class="flex items-center justify-between mb-4">
-          <div class="h-4 bg-gray-200 rounded w-24"></div>
-          <div class="h-10 w-10 bg-gray-200 rounded"></div>
+          <div class="h-4 rounded w-24" style="background-color: #E8DED2;"></div>
+          <div class="h-10 w-10 rounded" style="background-color: #E8DED2;"></div>
         </div>
-        <div class="h-8 bg-gray-200 rounded w-32 mb-2"></div>
-        <div class="h-4 bg-gray-200 rounded w-20"></div>
+        <div class="h-8 rounded w-32 mb-2" style="background-color: #E8DED2;"></div>
+        <div class="h-4 rounded w-20" style="background-color: #E8DED2;"></div>
       </div>
     `
   }
@@ -92,18 +92,18 @@ export function createKPICard(config) {
   const trendIndicator = trend !== undefined ? getTrendIndicator(trend) : null
   
   return `
-    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+    <div style="background: linear-gradient(135deg, #E8DED2 0%, #F9F7F5 100%); border-radius: 12px; box-shadow: 0 2px 8px rgba(74, 59, 50, 0.08);" class="p-6 hover:shadow-lg transition-shadow">
       <div class="flex items-center justify-between mb-4">
-        <h3 class="text-sm font-medium text-gray-600">${title}</h3>
-        <div class="p-2 rounded-lg ${icon.bg}">
+        <h3 class="text-sm font-medium" style="color: #7C6F65;">${title}</h3>
+        <div class="p-2" style="border-radius: 12px; background: linear-gradient(135deg, #D4A066 0%, #C9A359 100%);">
           <span class="text-2xl">${icon.emoji}</span>
         </div>
       </div>
-      <div class="text-3xl font-bold text-gray-900 mb-2">${value}</div>
+      <div class="text-3xl font-bold mb-2" style="font-family: 'Playfair Display', serif; color: #4A3B32;">${value}</div>
       <div class="flex items-center justify-between text-sm">
-        <span class="text-gray-500">${subtitle}</span>
+        <span style="color: #7C6F65;">${subtitle}</span>
         ${trendIndicator ? `
-          <span class="${trendIndicator.bg} ${trendIndicator.color} px-2 py-1 rounded-full font-medium">
+          <span class="${trendIndicator.bg} ${trendIndicator.color} py-1 font-medium" style="padding-left: 0.5rem; padding-right: 0.5rem; border-radius: 12px;">
             ${trendIndicator.icon} ${Math.abs(trend).toFixed(1)}%
           </span>
         ` : ''}
@@ -199,10 +199,10 @@ export async function renderDashboardStats(container) {
     container.innerHTML = `
       <div class="mb-8">
         <div class="flex items-center justify-between mb-6">
-          <h2 class="text-2xl font-bold text-gray-900">📊 Dashboard Overview</h2>
-          <div class="text-sm text-gray-500">
+          <h2 class="text-2xl font-bold" style="font-family: 'Playfair Display', serif; color: #4A3B32;">📊 Dashboard Overview</h2>
+          <div class="text-sm" style="color: #7C6F65;">
             <span class="inline-flex items-center">
-              <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+              <span class="w-2 h-2 rounded-full mr-2 animate-pulse" style="background-color: #10B981;"></span>
               Auto-refreshing every 30s
             </span>
           </div>
@@ -214,11 +214,11 @@ export async function renderDashboardStats(container) {
       </div>
       
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-        <div class="bg-white rounded-lg shadow-md p-6">
+        <div class="p-6" style="background: linear-gradient(135deg, #E8DED2 0%, #F9F7F5 100%); border-radius: 12px; box-shadow: 0 2px 8px rgba(74, 59, 50, 0.08);">
           <div class="flex items-center justify-between mb-4">
-            <h3 class="text-lg font-semibold text-gray-900">🏆 Top Selling Products</h3>
+            <h3 class="text-lg font-semibold" style="font-family: 'Playfair Display', serif; color: #4A3B32;">🏆 Top Selling Products</h3>
             <button onclick="window.exportChartImage('topProductsChart', 'top-products')" 
-                    class="text-sm text-blue-600 hover:text-blue-800 font-medium">
+                    class="text-sm font-medium" style="color: #D4A066; border-radius: 8px; padding: 0.25rem 0.75rem; background: rgba(212, 160, 102, 0.1);">
               📥 Export
             </button>
           </div>
@@ -227,11 +227,11 @@ export async function renderDashboardStats(container) {
           </div>
         </div>
         
-        <div class="bg-white rounded-lg shadow-md p-6">
+        <div class="p-6" style="background: linear-gradient(135deg, #E8DED2 0%, #F9F7F5 100%); border-radius: 12px; box-shadow: 0 2px 8px rgba(74, 59, 50, 0.08);">
           <div class="flex items-center justify-between mb-4">
-            <h3 class="text-lg font-semibold text-gray-900">📋 Orders Overview</h3>
+            <h3 class="text-lg font-semibold" style="font-family: 'Playfair Display', serif; color: #4A3B32;">📋 Orders Overview</h3>
             <button onclick="window.exportChartImage('orderStatusChart', 'order-status')" 
-                    class="text-sm text-blue-600 hover:text-blue-800 font-medium">
+                    class="text-sm font-medium" style="color: #D4A066; border-radius: 8px; padding: 0.25rem 0.75rem; background: rgba(212, 160, 102, 0.1);">
               📥 Export
             </button>
           </div>
@@ -241,11 +241,11 @@ export async function renderDashboardStats(container) {
         </div>
       </div>
       
-      <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+      <div class="p-6 mb-8" style="background: linear-gradient(135deg, #E8DED2 0%, #F9F7F5 100%); border-radius: 12px; box-shadow: 0 2px 8px rgba(74, 59, 50, 0.08);">
         <div class="flex items-center justify-between mb-4">
-          <h3 class="text-lg font-semibold text-gray-900">📊 Inventory Stock Levels</h3>
+          <h3 class="text-lg font-semibold" style="font-family: 'Playfair Display', serif; color: #4A3B32;">📊 Inventory Stock Levels</h3>
           <button onclick="window.exportChartImage('inventoryChart', 'inventory-levels')" 
-                  class="text-sm text-blue-600 hover:text-blue-800 font-medium">
+                  class="text-sm font-medium" style="color: #D4A066; border-radius: 8px; padding: 0.25rem 0.75rem; background: rgba(212, 160, 102, 0.1);">
             📥 Export
           </button>
         </div>
@@ -291,11 +291,11 @@ function renderRevenueTrend(trend) {
   }
   
   return `
-    <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+    <div class="p-6 mb-6" style="background: linear-gradient(135deg, #E8DED2 0%, #F9F7F5 100%); border-radius: 12px; box-shadow: 0 2px 8px rgba(74, 59, 50, 0.08);">
       <div class="flex items-center justify-between mb-4">
-        <h3 class="text-lg font-semibold text-gray-900">📈 Revenue Trend (Last 7 Days)</h3>
+        <h3 class="text-lg font-semibold" style="font-family: 'Playfair Display', serif; color: #4A3B32;">📈 Revenue Trend (Last 7 Days)</h3>
         <button onclick="window.exportChartImage('revenueChart', 'revenue-trend')" 
-                class="text-sm text-blue-600 hover:text-blue-800 font-medium">
+                class="text-sm font-medium" style="color: #D4A066; border-radius: 8px; padding: 0.25rem 0.75rem; background: rgba(212, 160, 102, 0.1);">
           📥 Export
         </button>
       </div>
@@ -332,8 +332,8 @@ function createRevenueChart(trend) {
         {
           label: 'Revenue',
           data: revenueData,
-          borderColor: 'rgb(59, 130, 246)',
-          backgroundColor: 'rgba(59, 130, 246, 0.1)',
+          borderColor: 'rgb(74, 59, 50)',
+          backgroundColor: 'rgba(74, 59, 50, 0.1)',
           borderWidth: 3,
           fill: true,
           tension: 0.4,
@@ -342,8 +342,8 @@ function createRevenueChart(trend) {
         {
           label: 'Orders',
           data: ordersData,
-          borderColor: 'rgb(16, 185, 129)',
-          backgroundColor: 'rgba(16, 185, 129, 0.1)',
+          borderColor: 'rgb(212, 160, 102)',
+          backgroundColor: 'rgba(212, 160, 102, 0.1)',
           borderWidth: 2,
           fill: true,
           tension: 0.4,
@@ -453,13 +453,13 @@ function createTopProductsChart(products) {
   const quantities = products.map(p => p.quantity_sold);
   const revenues = products.map(p => p.revenue);
   
-  // Generate gradient colors
+  // Generate gradient colors - Elkhawaga theme
   const colors = [
-    'rgba(59, 130, 246, 0.8)',   // Blue
-    'rgba(16, 185, 129, 0.8)',   // Green
-    'rgba(245, 158, 11, 0.8)',   // Amber
-    'rgba(139, 92, 246, 0.8)',   // Purple
-    'rgba(236, 72, 153, 0.8)',   // Pink
+    'rgba(74, 59, 50, 0.8)',     // Espresso Brown
+    'rgba(212, 160, 102, 0.8)',  // Camel Beige
+    'rgba(201, 163, 89, 0.8)',   // Gold
+    'rgba(124, 111, 101, 0.8)',  // Medium Brown
+    'rgba(232, 222, 210, 0.8)',  // Light Beige
   ];
   
   topProductsChart = new Chart(ctx, {
@@ -546,12 +546,12 @@ function createOrderStatusChart(stats) {
       backgroundColor: [
         'rgba(245, 158, 11, 0.8)',  // Amber for pending
         'rgba(16, 185, 129, 0.8)',  // Green for completed
-        'rgba(59, 130, 246, 0.8)',  // Blue for total
+        'rgba(212, 160, 102, 0.8)',  // Camel for total
       ],
       borderColor: [
         'rgb(245, 158, 11)',
         'rgb(16, 185, 129)',
-        'rgb(59, 130, 246)',
+        'rgb(212, 160, 102)',
       ],
       borderWidth: 2,
     }]
@@ -612,13 +612,13 @@ function createInventoryChart(stats) {
         stats.out_of_stock_count
       ],
       backgroundColor: [
-        'rgba(59, 130, 246, 0.6)',   // Blue - Total
+        'rgba(74, 59, 50, 0.6)',     // Espresso - Total
         'rgba(16, 185, 129, 0.6)',   // Green - In Stock
         'rgba(245, 158, 11, 0.6)',   // Amber - Low Stock
         'rgba(239, 68, 68, 0.6)',    // Red - Out of Stock
       ],
       borderColor: [
-        'rgb(59, 130, 246)',
+        'rgb(74, 59, 50)',
         'rgb(16, 185, 129)',
         'rgb(245, 158, 11)',
         'rgb(239, 68, 68)',

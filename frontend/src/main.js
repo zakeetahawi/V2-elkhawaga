@@ -151,46 +151,46 @@ const LoginPage = () => `
 
 // DASHBOARD PAGE
 const DashboardPage = () => `
-  <div class="min-h-screen bg-gray-50" dir="${getLanguage() === 'ar' ? 'rtl' : 'ltr'}">
-    <!-- Sidebar -->
-    <aside class="fixed right-0 top-0 h-full w-64 bg-gradient-to-b from-gray-900 to-gray-800 text-white shadow-2xl z-50">
+  <div class="min-h-screen bg-cream" dir="${getLanguage() === 'ar' ? 'rtl' : 'ltr'}" style="background-color: #F9F7F5;">
+    <!-- Elkhawaga Sidebar -->
+    <aside class="fixed right-0 top-0 h-full w-64 text-white shadow-2xl z-50" style="background: linear-gradient(180deg, #4A3B32 0%, #3A2D25 100%);">
       <div class="p-6">
         <div class="flex items-center gap-3 mb-8">
-          <div class="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg" style="background: linear-gradient(135deg, #D4A066 0%, #C9A359 100%);">
             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
             </svg>
           </div>
           <div>
-            <h1 class="text-xl font-bold">${t('login.title')}</h1>
-            <p class="text-xs text-gray-400">v1.0.0</p>
+            <h1 class="text-xl font-bold" style="font-family: 'Playfair Display', serif;">Elkhawaga</h1>
+            <p class="text-xs" style="color: #D4A066;">Textile ERP v1.0</p>
           </div>
         </div>
 
         <nav class="space-y-2">
-          <a href="#" onclick="navigateTo('dashboard')" class="nav-item active flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 transition-all">
+          <a href="#" onclick="navigateTo('dashboard')" class="nav-item active flex items-center gap-3 px-4 py-3 rounded-xl transition-all" style="background: rgba(212, 160, 102, 0.2); border-left: 3px solid #D4A066;">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
             <span class="font-semibold">${t('nav.home')}</span>
           </a>
           <a href="#" onclick="navigateTo('customers')" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 transition-all">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-            <span>${t('nav.customers')}</span>
+            <span>CRM / ${t('nav.customers')}</span>
           </a>
           <a href="#" onclick="navigateTo('sales')" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 transition-all">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
-            <span>${t('nav.sales')}</span>
+            <span>${t('nav.sales')} & Orders</span>
           </a>
           <a href="#" onclick="navigateTo('inventory')" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 transition-all">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
-            <span>${t('nav.inventory')}</span>
+            <span>${t('nav.inventory')} (Fabrics)</span>
           </a>
           <a href="#" onclick="navigateTo('production')" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 transition-all">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-            <span>${t('nav.production')}</span>
+            <span>Manufacturing</span>
           </a>
           <a href="#" onclick="navigateTo('reports')" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 transition-all">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-            <span>${t('nav.reports')}</span>
+            <span>Accounting</span>
           </a>
           <a href="#" onclick="navigateTo('settings')" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/10 transition-all">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
@@ -209,45 +209,45 @@ const DashboardPage = () => `
 
     <!-- Main Content -->
     <main class="mr-64 p-8">
-      <!-- Header -->
+      <!-- Header with Elkhawaga Theme -->
       <div class="mb-8">
         <div class="flex items-center justify-between mb-6">
           <div>
-            <h1 class="text-3xl font-bold text-gray-900">${t('dashboard.welcome')}, ${AppState.user?.username || 'User'} 👋</h1>
-            <p class="text-gray-600 mt-1">${t('dashboard.overview')}</p>
+            <h1 class="text-4xl font-bold mb-2" style="font-family: 'Playfair Display', serif; color: #4A3B32;">${t('dashboard.welcome')}, ${AppState.user?.username || 'User'} 👋</h1>
+            <p class="text-lg" style="color: #7C6F65;">${t('dashboard.overview')}</p>
           </div>
           <div class="flex items-center gap-4">
-            <!-- Language Switcher -->
+            <!-- Language Switcher with Elkhawaga Style -->
             <div class="relative" onclick="toggleLanguage()">
-              <button class="px-4 py-2 bg-white rounded-lg shadow-sm hover:shadow-md transition-all flex items-center gap-2 cursor-pointer">
-                <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <button class="px-4 py-2 rounded-xl shadow-sm hover:shadow-md transition-all flex items-center gap-2 cursor-pointer" style="background: white; border: 1px solid #E8DED2;">
+                <svg class="w-5 h-5" style="color: #4A3B32;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                 </svg>
-                <span class="text-sm font-semibold text-gray-700">${getLanguage().toUpperCase()}</span>
+                <span class="text-sm font-semibold" style="color: #4A3B32;">${getLanguage().toUpperCase()}</span>
               </button>
             </div>
-            <!-- Notification Bell -->
+            <!-- Notification Bell with Elkhawaga Theme -->
             <div class="relative">
-                <button onclick="toggleNotifications()" class="p-2 bg-white rounded-lg shadow-sm hover:shadow-md transition-all relative">
-                  <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
-                  <span id="notif-badge" class="hidden absolute top-1 right-2 w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                <button onclick="toggleNotifications()" class="p-2 rounded-xl shadow-sm hover:shadow-md transition-all relative" style="background: white; border: 1px solid #E8DED2;">
+                  <svg class="w-6 h-6" style="color: #4A3B32;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
+                  <span id="notif-badge" class="hidden absolute top-1 right-2 w-2 h-2 rounded-full animate-pulse" style="background: #D4A066;"></span>
                 </button>
-                <div id="notif-dropdown" class="hidden absolute right-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border border-gray-100 z-50 overflow-hidden" style="right: ${getLanguage() === 'ar' ? 'auto' : '0'}; left: ${getLanguage() === 'ar' ? '0' : 'auto'};">
-                    <div class="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
-                        <h3 class="font-bold text-gray-900">Notifications</h3>
-                        <span id="notif-count" class="text-xs font-medium bg-white px-2 py-1 rounded-full text-gray-600 border border-gray-200">0</span>
+                <div id="notif-dropdown" class="hidden absolute right-0 mt-2 w-80 bg-white rounded-xl shadow-2xl border overflow-hidden" style="right: ${getLanguage() === 'ar' ? 'auto' : '0'}; left: ${getLanguage() === 'ar' ? '0' : 'auto'}; border-color: #E8DED2; z-index: 9999;">
+                    <div class="p-4 border-b flex justify-between items-center" style="background: #F9F7F5; border-color: #E8DED2;">
+                        <h3 class="font-bold" style="color: #4A3B32;">Notifications</h3>
+                        <span id="notif-count" class="text-xs font-medium bg-white px-2 py-1 rounded-full border" style="color: #4A3B32; border-color: #E8DED2;">0</span>
                     </div>
                     <div id="notif-list" class="max-h-80 overflow-y-auto">
-                        <div class="p-8 text-center text-gray-400 text-sm">Scanning...</div>
+                        <div class="p-8 text-center text-sm" style="color: #7C6F65;">Scanning...</div>
                     </div>
                 </div>
             </div>
-            <div class="flex items-center gap-3 bg-white px-4 py-2 rounded-xl shadow-sm">
-              <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
+            <div class="flex items-center gap-3 px-4 py-2 rounded-xl shadow-sm" style="background: white; border: 1px solid #E8DED2;">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold" style="background: linear-gradient(135deg, #D4A066 0%, #C9A359 100%);">
                 ${(AppState.user?.username || 'A')[0].toUpperCase()}
               </div>
               <div class="text-right">
-                <p class="font-semibold text-sm">${AppState.user?.username || 'Admin'}</p>
+                <p class="font-semibold text-sm" style="color: #4A3B32;">${AppState.user?.username || 'Admin'}</p>
                 <p class="text-xs text-gray-500">${AppState.user?.role?.name || 'مدير'}</p>
               </div>
             </div>
@@ -257,27 +257,6 @@ const DashboardPage = () => `
 
       <!-- Dashboard Stats Container (Real-time data from API) -->
       <div id="dashboard-stats-container"></div>
-              </svg>
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="text-center">
-                  <div class="text-3xl font-bold text-gray-900">234</div>
-                  <div class="text-sm text-gray-600">${t('dashboard.charts.products')}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="grid grid-cols-2 gap-4 mt-4">
-            <div class="flex items-center gap-2">
-              <div class="w-4 h-4 bg-indigo-500 rounded"></div>
-              <span class="text-sm text-gray-600">${t('dashboard.charts.active')} (75%)</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <div class="w-4 h-4 bg-green-500 rounded"></div>
-              <span class="text-sm text-gray-600">${t('dashboard.charts.limited')} (25%)</span>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <!-- Recent Activities -->
       <div class="bg-white rounded-2xl shadow-lg p-6">
